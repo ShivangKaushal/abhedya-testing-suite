@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Abhedya Edge Shield",
+  "version": "1.0",
+  "description": "Zero-Day Phishing Interceptor powered by Ensemble AI.",
+
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://project-abhedya.onrender.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_popup": "index.html",
+    "default_title": "Abhedya Edge Shield"
+  }
+}

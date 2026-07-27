@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abhedya Edge Shield</title>
+    <style>
+        body { width: 320px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #e2e8f0; margin: 0; padding: 20px; }
+        h2 { color: #38bdf8; margin-top: 0; border-bottom: 1px solid #1e293b; padding-bottom: 10px; font-size: 1.5rem; text-align: center; }
+        
+        .status-box { background: #1e293b; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; border: 1px solid #334155; }
+        .status-box span { color: #10b981; font-weight: bold; }
+        
+        .settings-group { background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid #334155; }
+        label { font-weight: bold; margin-bottom: 15px; display: block; color: #94a3b8; font-size: 0.9rem; text-align: center;}
+        
+        /* New Button Styles */
+        .mode-btn {
+            display: block; width: 100%; background-color: #0f172a; color: #e2e8f0;
+            border: 2px solid #334155; padding: 10px; margin-bottom: 10px;
+            border-radius: 6px; font-size: 0.95rem; font-weight: bold;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .mode-btn:hover { background-color: #334155; }
+        
+        /* Active State Colors */
+        .active-paranoid { border-color: #ef4444; background-color: rgba(239, 68, 68, 0.15); color: #ef4444;}
+        .active-guarded { border-color: #f59e0b; background-color: rgba(245, 158, 11, 0.15); color: #f59e0b;}
+        .active-standard { border-color: #10b981; background-color: rgba(16, 185, 129, 0.15); color: #10b981;}
+        .active-relaxed { border-color: #38bdf8; background-color: rgba(56, 189, 248, 0.15); color: #38bdf8;}
+    </style>
+</head>
+<body>
+    <h2>Project Abhedya</h2>
+    
+    <div class="status-box">
+        Ensemble Engine: <span>ONLINE</span>
+    </div>
+
+    <div class="settings-group">
+        <label>Adaptive Threat Threshold</label>
+        
+        <button class="mode-btn" data-threshold="35" data-class="active-paranoid">
+            Paranoid Mode (Blocks > 35)
+        </button>
+        
+        <button class="mode-btn" data-threshold="50" data-class="active-guarded">
+            Guarded Mode (Blocks > 50)
+        </button>
+
+        <button class="mode-btn" data-threshold="65" data-class="active-standard">
+            Standard Mode (Blocks > 65)
+        </button>
+
+        <button class="mode-btn" data-threshold="80" data-class="active-relaxed">
+            Relaxed Mode (Blocks > 80)
+        </button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
