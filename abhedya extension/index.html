@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Abhedya Configurations</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h2>Project Abhedya</h2>
+  
+  <div class="status-panel">
+    Ensemble Engine: <span class="status-indicator">ONLINE</span>
+  </div>
+
+  <div class="settings-container">
+    <label class="settings-label">Threat Threshold Matrix</label>
+    
+    <button class="mode-btn" data-threshold="35" data-class="active-paranoid">Paranoid (Blocks > 35)</button>
+    <button class="mode-btn" data-threshold="50" data-class="active-guarded">Guarded (Blocks > 50)</button>
+    <button class="mode-btn" data-threshold="65" data-class="active-standard">Standard (Blocks > 65)</button>
+    <button class="mode-btn" data-threshold="80" data-class="active-relaxed">Relaxed (Blocks > 80)</button>
+  </div>
+
+  <div class="popup-footer">
+    <a class="footer-link" href="https://forms.gle/YOUR_FORM_ID_HERE" target="_blank" rel="noopener noreferrer">
+      Submit Issue / Feedback Form
+    </a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

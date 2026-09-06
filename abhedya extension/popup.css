@@ -1,0 +1,133 @@
+/**
+ * Stylesheet for the Abhedya Edge Shield popup menu.
+ */
+
+:root {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --border-color: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-blue: #38bdf8;
+  --color-safe: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+}
+
+body { 
+  width: 320px; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background-color: var(--bg-primary); 
+  color: var(--text-primary); 
+  margin: 0; 
+  padding: 20px; 
+  box-sizing: border-box;
+}
+
+h2 { 
+  color: var(--accent-blue); 
+  margin-top: 0; 
+  border-bottom: 1px solid var(--border-color); 
+  padding-bottom: 12px; 
+  font-size: 1.3rem; 
+  text-align: center; 
+  letter-spacing: 0.5px;
+}
+
+.status-panel { 
+  background: var(--bg-secondary); 
+  padding: 15px; 
+  border-radius: 8px; 
+  margin-bottom: 20px; 
+  text-align: center; 
+  border: 1px solid var(--border-color); 
+  font-size: 0.95rem;
+}
+
+.status-indicator { 
+  color: var(--color-safe); 
+  font-weight: bold; 
+}
+
+.settings-container { 
+  background: var(--bg-secondary); 
+  padding: 15px; 
+  border-radius: 8px; 
+  border: 1px solid var(--border-color); 
+}
+
+.settings-label { 
+  font-weight: 600; 
+  margin-bottom: 15px; 
+  display: block; 
+  color: var(--text-secondary); 
+  font-size: 0.85rem; 
+  text-align: center; 
+  text-transform: uppercase;
+}
+
+.mode-btn {
+  display: block; 
+  width: 100%; 
+  background-color: var(--bg-primary); 
+  color: var(--text-primary);
+  border: 1px solid var(--border-color); 
+  padding: 12px; 
+  margin-bottom: 10px;
+  border-radius: 6px; 
+  font-size: 0.9rem; 
+  font-weight: 600;
+  cursor: pointer; 
+  transition: all 0.2s ease;
+}
+
+.mode-btn:hover { 
+  background-color: var(--border-color); 
+}
+
+.mode-btn:last-child { 
+  margin-bottom: 0; 
+}
+
+.active-paranoid { 
+  border-color: var(--color-danger); 
+  background-color: rgba(239, 68, 68, 0.15); 
+  color: var(--color-danger);
+}
+
+.active-guarded { 
+  border-color: var(--color-warning); 
+  background-color: rgba(245, 158, 11, 0.15); 
+  color: var(--color-warning);
+}
+
+.active-standard { 
+  border-color: var(--color-safe); 
+  background-color: rgba(16, 185, 129, 0.15); 
+  color: var(--color-safe);
+}
+
+.active-relaxed { 
+  border-color: var(--accent-blue); 
+  background-color: rgba(56, 189, 248, 0.15); 
+  color: var(--accent-blue);
+}
+
+.popup-footer {
+  margin-top: 15px;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+}
+
+.footer-link {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+}
