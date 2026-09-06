@@ -113,6 +113,101 @@ h2 {
   color: var(--accent-blue);
 }
 
+/* --- Whitelist UI Styles --- */
+
+.whitelist-container {
+  background: var(--bg-secondary);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-top: 15px;
+}
+
+.whitelist-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: -5px 0 10px 0;
+}
+
+.whitelist-input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#whitelist-input {
+  flex: 1;
+  padding: 8px 10px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-family: monospace;
+}
+
+#whitelist-input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+}
+
+#add-whitelist-btn {
+  background-color: var(--accent-blue);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+#add-whitelist-btn:hover {
+  opacity: 0.8;
+}
+
+.whitelist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.whitelist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
+.whitelist-item:last-child {
+  margin-bottom: 0;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0 5px;
+}
+
+.remove-btn:hover {
+  color: #fca5a5;
+}
+
+/* --- Footer --- */
+
 .popup-footer {
   margin-top: 15px;
   text-align: center;

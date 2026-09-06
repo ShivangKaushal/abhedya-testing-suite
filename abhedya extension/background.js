@@ -64,10 +64,22 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     return true;
   }
 
-  chrome.storage.local.get(["dynamicBlocklist"], (data) => {
+  chrome.storage.local.get(["dynamicBlocklist", "userWhitelist"], (data) => {
     const blocklist = data.dynamicBlocklist || [];
+    const whitelist = data.userWhitelist || [];
 
-    // Stage 1: Quick blocklist check
+    // LAYER 0: The User Whitelist Override
+    if (whitelist.includes(targetDomain)) {
+      console.info(`[Abhedya:Whitelist] Bypassing scan for trusted domain: ${targetDomain}`);
+      sendResponse({ 
+        ensemble_score: 0, 
+        ai_analysis: { reason: "User explicitly whitelisted this domain." },
+        raw_scores: { url_risk: 0, dom_risk: 0, ssl_risk: 0, gemini_risk: 0 }
+      });
+      return; 
+    }
+
+    // LAYER 1: Static Threat Feed Interception
     if (blocklist.includes(targetDomain)) {
       console.warn(`[Abhedya:Shield] Blocklist hit: ${targetDomain}`);
       sendResponse({ 
@@ -78,14 +90,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       return; 
     }
 
-    // Stage 2: In-memory session check
+    // LAYER 2: In-memory session check
     if (sessionCache[targetDomain]) {
       console.info(`[Abhedya:Cache] Memory hit: ${targetDomain}`);
       sendResponse(sessionCache[targetDomain]);
       return;
     }
 
-    // Stage 3: Live multimodal inspection
+    // LAYER 3: Live multimodal inspection
     console.info(`[Abhedya:Cloud] Dispatching payload for: ${targetDomain}`);
     
     chrome.tabs.captureVisibleTab(sender.tab.windowId, { format: "jpeg", quality: 30 }, (screenshotUrl) => {

@@ -21,6 +21,21 @@
     <button class="mode-btn" data-threshold="80" data-class="active-relaxed">Relaxed (Blocks > 80)</button>
   </div>
 
+  <!-- NEW: Whitelist Management Section -->
+  <div class="whitelist-container">
+    <label class="settings-label">Personal Whitelist</label>
+    <p class="whitelist-desc">Domains added here bypass all security scans.</p>
+    
+    <div class="whitelist-input-group">
+      <input type="text" id="whitelist-input" placeholder="e.g. vtop.vitbhopal.ac.in">
+      <button id="add-whitelist-btn">Add</button>
+    </div>
+    
+    <ul id="whitelist-list" class="whitelist-list">
+      <!-- Whitelisted domains will be injected here via JS -->
+    </ul>
+  </div>
+
   <div class="popup-footer">
     <a class="footer-link" href="https://forms.gle/YOUR_FORM_ID_HERE" target="_blank" rel="noopener noreferrer">
       Submit Issue / Feedback Form
